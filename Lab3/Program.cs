@@ -1,5 +1,7 @@
 ﻿
 using Lab3;
+using Lab3.CarFolder;
+using Lab3.CarFolder.CarV3;
 
 namespace Lab1 {
     public class Program {
@@ -45,9 +47,33 @@ namespace Lab1 {
 
             Console.WriteLine("end");
             /*--------------------------------------------7 PROBLEM---------------------------------*/
+            Console.WriteLine("7 problem");
+            Console.WriteLine("begin");
 
+            Car.CheckCarDriveDistanceAvaliable();
 
+            Console.WriteLine("end");
+            /*--------------------------------------------8 PROBLEM---------------------------------*/
+            Console.WriteLine("8 problem");
+            Console.WriteLine("begin");
 
+            CarV2.Problem8Task();
+
+            Console.WriteLine("end");
+            /*--------------------------------------------9 PROBLEM---------------------------------*/
+            Console.WriteLine("9 problem");
+            Console.WriteLine("begin");
+
+            Console.WriteLine(Rectangle.EnterValue());
+
+            Console.WriteLine("end");
+            /*--------------------------------------------10 PROBLEM---------------------------------*/
+            Console.WriteLine("10 problem");
+            Console.WriteLine("begin");
+
+            CarV3.Problem10Task();
+
+            Console.WriteLine("end");
         }
     }
 }
