@@ -28,8 +28,7 @@ namespace Lab3 {
             provider.NumberDecimalSeparator = ".";
 
             int n = int.Parse(Console.ReadLine());
-            List<Employee> employees = new List<Employee>();
-            // salary needs to be entered with , insted of .  
+            List<Employee> employees = new List<Employee>(); 
             for (int i = 0; i < n; i++) {
                 string[] tokens = Console.ReadLine().Split();
                 string name = tokens[0];
