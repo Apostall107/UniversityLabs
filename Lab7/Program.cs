@@ -30,8 +30,7 @@ Console.WriteLine("Problem 7");
 ResolveProblem7();
 Console.WriteLine("Problem 8");
 ResolveProblem8();
-Console.WriteLine("Problem 9");
-ResolveProblem9();
+
 
 void ResolveProblem1() {
     string name = Console.ReadLine();
