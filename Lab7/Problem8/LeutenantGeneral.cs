@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Text;
+﻿using System.Text;
 
 namespace Lab7.Problem8 {
     // LeutenantGeneral Class
     internal class LeutenantGeneral : Private, ILeutenantGeneral {
-        public LeutenantGeneral(string firstName, string lastName, int id, double sallary, List<Private> privates) 
+        public LeutenantGeneral(string firstName, string lastName, int id, double sallary, List<Private> privates)
             : base(firstName, lastName, id, sallary) {
             Privates = privates;
         }

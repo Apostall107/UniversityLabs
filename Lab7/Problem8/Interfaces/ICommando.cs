@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace Lab7.Problem8 {
+﻿namespace Lab7.Problem8 {
     // Commando Interface
     internal interface ICommando : ISpecialisedSoldier, IMission {
         void CompleteMission();

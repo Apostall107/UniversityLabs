@@ -1,26 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace InheritanceLab.Problem3
-{
-    internal class Student : Human
-    {
+namespace InheritanceLab.Problem3 {
+    internal class Student : Human {
         private string _facultyNumber;
 
         public Student(string firstName, string lastName, string facultyNumber)
-            :base(firstName, lastName)
-        {
+            : base(firstName, lastName) {
             FacultyNumber = facultyNumber;
         }
 
-        private string FacultyNumber
-        {
+        private string FacultyNumber {
             get => _facultyNumber;
-            set
-            {
+            set {
                 if (value.Length < 5 || value.Length > 10)
                     throw new ArgumentException("Invalid faculty number!");
 
@@ -28,8 +19,7 @@ namespace InheritanceLab.Problem3
             }
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             var builder = new StringBuilder();
             builder.Append(base.ToString())
                 .AppendLine($"Faculty numver: {FacultyNumber}");

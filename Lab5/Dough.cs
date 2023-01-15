@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab5 {
+﻿namespace Lab5 {
     internal class Dough {
         const double caloriesPerGram = 2;
 
@@ -37,7 +30,7 @@ namespace Lab5 {
         }
 
 
-        private double FlourTypeIndex { 
+        private double FlourTypeIndex {
             get { return _flourType; }
             set {
                 if (value == null) {
@@ -48,17 +41,17 @@ namespace Lab5 {
             }
 
         }
-        private double BackingTechniqueIndex { 
+        private double BackingTechniqueIndex {
             get { return _backingTechnique; }
             set {
                 if (value == null) {
                     Console.WriteLine("Invalid type of dough.");
                 } else {
-                 _backingTechnique = value;
+                    _backingTechnique = value;
                 }
             }
         }
-        private int Gram { 
+        private int Gram {
             get { return _grams; }
             set {
                 if (value > 200) {
@@ -70,12 +63,12 @@ namespace Lab5 {
         }
         public double Calories {
             get {
-                return (Gram * caloriesPerGram) * FlourTypeIndex * BackingTechniqueIndex ;
+                return (Gram * caloriesPerGram) * FlourTypeIndex * BackingTechniqueIndex;
             }
         }
 
         public static Dough CreateDought(string[] doughInput) {
-            
+
             string flourT = doughInput[1];
             string backingT = doughInput[2];
             int grams = int.Parse(doughInput[3]);
@@ -83,8 +76,8 @@ namespace Lab5 {
             Dough dough = new Dough(flourT, backingT, grams);
 
             return dough;
-            }
         }
-
     }
+
+}
 

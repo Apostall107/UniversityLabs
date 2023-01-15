@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab5 {
+﻿namespace Lab5 {
     internal class Pizza {
 
         private string _name;
@@ -36,7 +30,7 @@ namespace Lab5 {
                 } else {
                     _toppings = value;
                 }
-                
+
             }
 
         }
@@ -69,7 +63,7 @@ namespace Lab5 {
 
 
             List<Topping> topings = new List<Topping>();
-            do { 
+            do {
 
                 string[] toppingData = Console.ReadLine().Split();
 
@@ -77,7 +71,7 @@ namespace Lab5 {
 
                 Topping topping = Topping.CreateTopping(toppingData);
                 topings.Add(topping);
-            }while(true);
+            } while (true);
 
 
             Pizza pizza = new Pizza(pizzaName, dough, topings);

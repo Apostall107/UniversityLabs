@@ -18,7 +18,7 @@ namespace Lab7.Problem8 {
             sb.AppendLine("FirstName: " + this.FirstName);
             sb.AppendLine("LastName: " + this.LastName);
             sb.AppendLine("Id: " + this.Id);
-            return   sb.ToString();
+            return sb.ToString();
         }
     }
 

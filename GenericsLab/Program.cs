@@ -1,6 +1,6 @@
-﻿using GenericsLab.Problems0_6;
+﻿using GenericsLab.Problem9;
+using GenericsLab.Problems0_6;
 using GenericsLab.Problems7_8;
-using GenericsLab.Problem9;
 
 
 Console.WriteLine("Problem 0");
@@ -23,32 +23,27 @@ Console.WriteLine("Problem 9");
 ResolveProblem09();
 
 //===============Resolvers section===============
-void ResolveProblem00()
-{
+void ResolveProblem00() {
     var intBox = new Box<int>(12313);
     var strBox = new Box<string>("life in a box");
     Console.WriteLine(intBox);
     Console.WriteLine(strBox);
 }
 
-void ResolveProblem01()
-{
+void ResolveProblem01() {
     int.TryParse(Console.ReadLine(), out var count);
 
-    while (count > 0)
-    {
+    while (count > 0) {
         Console.WriteLine(new Box<string>(Console.ReadLine()));
 
         count--;
     }
 }
 
-void ResolveProblem02()
-{
+void ResolveProblem02() {
     int.TryParse(Console.ReadLine(), out var count);
 
-    while (count > 0)
-    {
+    while (count > 0) {
         int.TryParse(Console.ReadLine(), out var number);
         Console.WriteLine(new Box<int>(number));
 
@@ -56,20 +51,17 @@ void ResolveProblem02()
     }
 }
 
-void Swap<T>(List<T> data, int firstSwapItem, int secondSwapItem)
-{
+void Swap<T>(List<T> data, int firstSwapItem, int secondSwapItem) {
     var temp = data[firstSwapItem];
     data[firstSwapItem] = data[secondSwapItem];
     data[secondSwapItem] = temp;
 }
 
-void ResolveProblem03()
-{
+void ResolveProblem03() {
     int.TryParse(Console.ReadLine(), out var count);
     var boxesCollection = new List<Box<string>>();
 
-    while (count > 0)
-    {
+    while (count > 0) {
         boxesCollection.Add(new Box<string>(Console.ReadLine()));
 
         count--;
@@ -77,19 +69,16 @@ void ResolveProblem03()
 
     var swapIndexes = Console.ReadLine().Split().Select(int.Parse).ToArray();
     Swap(boxesCollection, swapIndexes[0], swapIndexes[1]);
-    foreach (var item in boxesCollection)
-    {
+    foreach (var item in boxesCollection) {
         Console.WriteLine(item);
     }
 }
 
-void ResolveProblem04()
-{
+void ResolveProblem04() {
     int.TryParse(Console.ReadLine(), out var count);
     var boxesCollection = new List<Box<int>>();
 
-    while (count > 0)
-    {
+    while (count > 0) {
         boxesCollection.Add(new Box<int>(Convert.ToInt32(Console.ReadLine())));
 
         count--;
@@ -97,18 +86,15 @@ void ResolveProblem04()
 
     var swapIndexes = Console.ReadLine().Split().Select(int.Parse).ToArray();
     Swap(boxesCollection, swapIndexes[0], swapIndexes[1]);
-    foreach (var item in boxesCollection)
-    {
+    foreach (var item in boxesCollection) {
         Console.WriteLine(item);
     }
 }
 
-int CountGreaterThanGiven<T>(List<T> data, T givenValue) where T : IComparable<T>
-{
+int CountGreaterThanGiven<T>(List<T> data, T givenValue) where T : IComparable<T> {
     var count = 0;
 
-    foreach (var item in data)
-    {
+    foreach (var item in data) {
         if (item.CompareTo(givenValue) > 0)
             count++;
     }
@@ -116,13 +102,11 @@ int CountGreaterThanGiven<T>(List<T> data, T givenValue) where T : IComparable<T
     return count;
 }
 
-void ResolveProblem05()
-{
+void ResolveProblem05() {
     int.TryParse(Console.ReadLine(), out var count);
     var boxesCollection = new List<Box<string>>();
 
-    while (count > 0)
-    {
+    while (count > 0) {
         boxesCollection.Add(new Box<string>(Console.ReadLine()));
 
         count--;
@@ -132,13 +116,11 @@ void ResolveProblem05()
     Console.WriteLine(CountGreaterThanGiven(boxesCollection, toCompare));
 }
 
-void ResolveProblem06()
-{
+void ResolveProblem06() {
     int.TryParse(Console.ReadLine(), out var count);
     var boxesCollection = new List<Box<double>>();
 
-    while (count > 0)
-    {
+    while (count > 0) {
         boxesCollection.Add(new Box<double>(Convert.ToDouble(Console.ReadLine())));
 
         count--;
@@ -148,20 +130,17 @@ void ResolveProblem06()
     Console.WriteLine(CountGreaterThanGiven(boxesCollection, toCompare));
 }
 
-void ResolveProblem07_08()
-{
+void ResolveProblem07_08() {
     var interpreter = new CommandInterpreter();
     var cmdArgs = Console.ReadLine().Split();
 
-    while (cmdArgs[0] != "END")
-    {
+    while (cmdArgs[0] != "END") {
         interpreter.ExecuteCommand(cmdArgs);
         cmdArgs = Console.ReadLine().Split();
     }
 }
 
-void ResolveProblem09()
-{
+void ResolveProblem09() {
     var input = Console.ReadLine().Split();
     var name = $"{input[0]} {input[1]}";
     var address = input[2];

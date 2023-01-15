@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Lab7.Problem8 {
     internal class Commando : SpecialisedSoldier, ICommando {
         private string _state;
 
 
-        public Commando(string firstName, string lastName, int id, double sallary, string corps, string codeName, string state ) 
+        public Commando(string firstName, string lastName, int id, double sallary, string corps, string codeName, string state)
             : base(firstName, lastName, id, sallary, corps) {
             State = state;
             CodeName = codeName;

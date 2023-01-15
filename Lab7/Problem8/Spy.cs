@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Lab7.Problem8 {
     internal class Spy : Soldier, ISpy {
-        public Spy( string firstName, string lastName, int id,int codeNum) 
+        public Spy(string firstName, string lastName, int id, int codeNum)
             : base(id, firstName, lastName) {
             CodeNumber = codeNum;
         }
@@ -15,7 +11,7 @@ namespace Lab7.Problem8 {
 
         public override string ToString() {
             StringBuilder sb = new StringBuilder();
-                sb.AppendLine("CodeNumber: " + this.CodeNumber); 
+            sb.AppendLine("CodeNumber: " + this.CodeNumber);
 
             return base.ToString() + sb.ToString();
         }

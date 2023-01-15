@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab3 {
+﻿namespace Lab3 {
     internal class Rectangle {
         string id;
         int width;
@@ -42,7 +35,7 @@ namespace Lab3 {
                 Rectangle rectangle = new Rectangle(id, width, height, topLeft);
                 rectangles.Add(rectangle);
             }
-            List<string> toCompare= new List<string>();
+            List<string> toCompare = new List<string>();
             for (int i = 0; i < m; i++) {
                 string[] tokenPairs = Console.ReadLine().Split();
                 string id1 = tokenPairs[0];
@@ -54,14 +47,14 @@ namespace Lab3 {
 
             return DoIntersect(rectangles, toCompare);
         }
-            static string DoIntersect(List<Rectangle> rectangles, List<string> toCompare) {
-            for (int i = 0; i < toCompare.Count; i=+2) {
+        static string DoIntersect(List<Rectangle> rectangles, List<string> toCompare) {
+            for (int i = 0; i < toCompare.Count; i = +2) {
                 int y = i + 1;
                 var compare1 = rectangles.Where(x => x.id.ToString() == toCompare[i].ToString()).First();
                 var compare2 = rectangles.Where(x => x.id.ToString() == toCompare[y].ToString()).First();
                 // If one rectangle is on left side of other
 
-                if (compare1.botRight.X > compare2. topLeft.X || compare1.topLeft.X > compare2.botRight.X) {
+                if (compare1.botRight.X > compare2.topLeft.X || compare1.topLeft.X > compare2.botRight.X) {
                     return "false";
                 }
 
@@ -69,24 +62,24 @@ namespace Lab3 {
                 if (compare1.botRight.Y > compare2.topLeft.Y || compare1.topLeft.Y > compare2.botRight.Y) {
                     return "false";
                 }
-                
+
             }
 
             return "true";
-            }
         }
-
-        internal class Coordinates {
-            public int X, Y;
-
-            public Coordinates() { }
-            public Coordinates(int x, int y) {
-                X = x;
-                Y = y;
-            }
-        }
-
-
     }
+
+    internal class Coordinates {
+        public int X, Y;
+
+        public Coordinates() { }
+        public Coordinates(int x, int y) {
+            X = x;
+            Y = y;
+        }
+    }
+
+
+}
 
 

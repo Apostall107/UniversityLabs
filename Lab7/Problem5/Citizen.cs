@@ -1,10 +1,5 @@
 ﻿using Lab7.Problem7;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab7.Problem5 {
     internal class Citizen : IBuyer {

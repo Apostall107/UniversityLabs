@@ -7,12 +7,7 @@ using Lab7.Problem5;
 using Lab7.Problem6;
 using Lab7.Problem7;
 using Lab7.Problem8;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
 
 Console.WriteLine("Problem 1");
 ResolveProblem1();
@@ -138,8 +133,7 @@ void ResolveProblem6() {
             string birth = inputData[4];
 
             citizens.Add(new Lab7.Problem5.Citizen(name, age, id, birth));
-        } 
-        else if (inputData[0] == "Pet") {
+        } else if (inputData[0] == "Pet") {
             string name = inputData[1];
             string birth = inputData[2];
             pets.Add(new Pet(name, birth));
@@ -216,9 +210,9 @@ void ResolveProblem8() {
     provider.NumberDecimalSeparator = ".";
 
     string input;
-    List<Private> privates  = new List<Private>();
+    List<Private> privates = new List<Private>();
     List<Spy> spys = new List<Spy>();
-    List<LeutenantGeneral> leutenantGenerals= new List<LeutenantGeneral>();
+    List<LeutenantGeneral> leutenantGenerals = new List<LeutenantGeneral>();
     List<Engineer> engineers = new List<Engineer>();
     List<Commando> commandos = new List<Commando>();
     List<Spy> spies = new List<Spy>();
@@ -236,10 +230,10 @@ void ResolveProblem8() {
 
         switch (soldierData[0]) {
             case "Private":
-                Id = int.Parse(soldierData[1]);
-                name = soldierData[2];
-                lastName = soldierData[3];
-                sallary = double.Parse(soldierData[4], provider);
+            Id = int.Parse(soldierData[1]);
+            name = soldierData[2];
+            lastName = soldierData[3];
+            sallary = double.Parse(soldierData[4], provider);
 
             privates.Add(new Private(name, lastName, Id, sallary));
 
@@ -257,9 +251,9 @@ void ResolveProblem8() {
             name = soldierData[2];
             lastName = soldierData[3];
             sallary = double.Parse(soldierData[4], provider);
-            List <Private> myPrivates = new List<Private>();
-            for (int i = 5 ; i < soldierData.Length; i++) {
-                   myPrivates.Add(privates.Where(x => x.Id == int.Parse(soldierData[i]) ).FirstOrDefault());
+            List<Private> myPrivates = new List<Private>();
+            for (int i = 5; i < soldierData.Length; i++) {
+                myPrivates.Add(privates.Where(x => x.Id == int.Parse(soldierData[i])).FirstOrDefault());
             }
             myPrivates.RemoveAll(x => x == null);
 
@@ -298,11 +292,11 @@ void ResolveProblem8() {
 
 
     foreach (var item in privates) {
-        Console.WriteLine(item.ToString() );
+        Console.WriteLine(item.ToString());
     }
     foreach (var item in spies) {
         Console.WriteLine(item.ToString());
-        
+
     }
     foreach (var item in leutenantGenerals) {
         Console.WriteLine(item.ToString());

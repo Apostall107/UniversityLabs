@@ -1,14 +1,7 @@
 ﻿using InheritanceLab.Problem4.RadioExceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace InheritanceLab.Problem4
-{
-    internal class Song
-    {
+namespace InheritanceLab.Problem4 {
+    internal class Song {
         //constants for exceptions
         private const int ARTIST_MIN_LENGTH = 3;
         private const int ARTIST_MAX_LENGTH = 20;
@@ -24,18 +17,15 @@ namespace InheritanceLab.Problem4
         private int _minutes;
         private int _seconds;
 
-        public Song(string artist, string name, int minutes, int seconds)
-        {
+        public Song(string artist, string name, int minutes, int seconds) {
             Artist = artist;
             Name = name;
             Minutes = minutes;
             Seconds = seconds;
         }
 
-        private string Artist
-        {
-            set
-            {
+        private string Artist {
+            set {
                 if (value.Length < ARTIST_MIN_LENGTH || value.Length > ARTIST_MAX_LENGTH)
                     throw new InvalidArtistNameException(ARTIST_MIN_LENGTH, ARTIST_MAX_LENGTH);
 
@@ -43,10 +33,8 @@ namespace InheritanceLab.Problem4
             }
         }
 
-        private string Name
-        {
-            set
-            {
+        private string Name {
+            set {
                 if (value.Length < NAME_MIN_LENGTH || value.Length > NAME_MAX_LENGTH)
                     throw new InvalidSongNameException(NAME_MIN_LENGTH, NAME_MAX_LENGTH);
 
@@ -54,11 +42,9 @@ namespace InheritanceLab.Problem4
             }
         }
 
-        public  int Minutes
-        {
+        public int Minutes {
             get => _minutes;
-            set
-            {
+            set {
                 if (value < MIN_MINUTES || value > MAX_MINUTES)
                     throw new InvalidSongMinutesException(MIN_MINUTES, MAX_MINUTES);
 
@@ -66,11 +52,9 @@ namespace InheritanceLab.Problem4
             }
         }
 
-        public int Seconds
-        {
+        public int Seconds {
             get => _seconds;
-            set
-            {
+            set {
                 if (value < MIN_SECONDS || value > MAX_SECONDS)
                     throw new InvalidSongSecondsException(MIN_SECONDS, MAX_SECONDS);
 

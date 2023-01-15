@@ -1,28 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace InheritanceLab.Problem3
-{
-    internal class Worker : Human
-    {
+namespace InheritanceLab.Problem3 {
+    internal class Worker : Human {
         private decimal _weekSalary;
         private int _workHoursPerDay;
 
         public Worker(string firstName, string lastName, decimal weekSalary, int workHours)
-            : base(firstName, lastName)
-        {
+            : base(firstName, lastName) {
             WeekSalary = weekSalary;
             WorkingHours = workHours;
         }
 
-        private decimal WeekSalary
-        {
+        private decimal WeekSalary {
             get => _weekSalary;
-            set
-            {
+            set {
                 if (value <= 10)
                     throw new ArgumentException("Expected value mismatch! Argument: weekSalary");
 
@@ -30,11 +21,9 @@ namespace InheritanceLab.Problem3
             }
         }
 
-        private int WorkingHours
-        {
+        private int WorkingHours {
             get => _workHoursPerDay;
-            set
-            {
+            set {
                 if (value < 1 || value > 12)
                     throw new ArgumentException("Expected value mismatch! Argument: workHoursPerDay");
 
@@ -42,13 +31,11 @@ namespace InheritanceLab.Problem3
             }
         }
 
-        private object GetSalaryPerHour()
-        {
+        private object GetSalaryPerHour() {
             return (WeekSalary / 5) / WorkingHours;
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             var builder = new StringBuilder();
             builder.Append(base.ToString())
                 .AppendLine($"Week Salary {WeekSalary:F2}")

@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab5 {
+﻿namespace Lab5 {
     internal class Chicken {
-        Random _random= new Random();
+        Random _random = new Random();
 
-        private  int _age;
-        private  string _name;
-        private  int _productPerDay;
+        private int _age;
+        private string _name;
+        private int _productPerDay;
 
-        public Chicken( string name, int age) {
+        public Chicken(string name, int age) {
             Age = age;
             Name = name;
-            _productPerDay = _random.Next(1,10);
+            _productPerDay = _random.Next(1, 10);
         }
 
         private int Age {
@@ -39,16 +33,16 @@ namespace Lab5 {
             }
         }
 
-            public string ProductPerDay {
+        public string ProductPerDay {
             get { return CalculateProductPerDay(); }
         }
 
         private string CalculateProductPerDay() {
             return $" Chicken {Name} ({Age}) can produce- {_productPerDay} eggs per day";
-            
+
         }
 
 
-        }
     }
+}
 

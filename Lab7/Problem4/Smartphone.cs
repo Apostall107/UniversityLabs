@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab7.Problem4 {
+﻿namespace Lab7.Problem4 {
     internal class Smartphone : ICallable, IBrowseable {
-        public List<string> Numbers { get; set; } = new List<string>(); 
+        public List<string> Numbers { get; set; } = new List<string>();
         public List<string> Sites { get; set; } = new List<string>();
 
         public Smartphone() {

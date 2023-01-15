@@ -1,25 +1,15 @@
 ﻿using InheritanceLab.Problem4.RadioExceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace InheritanceLab.Problem4
-{
-    internal static class SongHelper
-    {
-        public static Stack<Song> ComposePlaylist()
-        {
+namespace InheritanceLab.Problem4 {
+    internal static class SongHelper {
+        public static Stack<Song> ComposePlaylist() {
             int.TryParse(Console.ReadLine(), out int songsCount);
             var songs = new Stack<Song>(songsCount);
 
-            while (songsCount > 0)
-            {
+            while (songsCount > 0) {
                 var songInfo = Console.ReadLine().Split(';');
 
-                try
-                {
+                try {
                     var minutesSecondsSeparator = songInfo[2].IndexOf(':');
 
                     if (songInfo.Length < 3 || minutesSecondsSeparator < 1 || minutesSecondsSeparator > songInfo[2].Length - 2)
@@ -32,13 +22,9 @@ namespace InheritanceLab.Problem4
 
                     songs.Push(new Song(artist, songName, minutes, seconds));
                     Console.WriteLine("Song added.");
-                }
-                catch (InvalidSongException ex)
-                {
+                } catch (InvalidSongException ex) {
                     Console.WriteLine(ex.Message);
-                }
-                catch
-                {
+                } catch {
                     Console.WriteLine("Invalid song length.");
                 }
 
@@ -46,11 +32,10 @@ namespace InheritanceLab.Problem4
             }
 
             return songs;
-            
+
         }
 
-        public static void PrintPlaylistSummary(Stack<Song> playlist)
-        {
+        public static void PrintPlaylistSummary(Stack<Song> playlist) {
             Console.WriteLine($"Songs added: {playlist.Count}");
 
             var totalSeconds = playlist.Select(s => s.Seconds).Sum();

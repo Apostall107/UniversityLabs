@@ -1,26 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GenericsLab.Problems7_8
-{
-    internal class MyCollection<T> : IMyCollection<T> where T : IComparable<T>
-    {
+﻿namespace GenericsLab.Problems7_8 {
+    internal class MyCollection<T> : IMyCollection<T> where T : IComparable<T> {
         private const int DEFAULT_LENGTH = 16;
 
         private T[] _array;
         private int _length;
 
-        public MyCollection()
-        {
+        public MyCollection() {
             _array = new T[DEFAULT_LENGTH];
         }
 
-        public void Add(T element)
-        {
+        public void Add(T element) {
             if (_length == _array.Length)
                 _array = _array.Concat(new T[_length]).ToArray();
 
@@ -28,15 +17,13 @@ namespace GenericsLab.Problems7_8
             _length++;
         }
 
-        public bool Contains(T element)
-        {
+        public bool Contains(T element) {
             if (_length == 0)
                 return false;
 
             var comparer = EqualityComparer<T>.Default;
 
-            foreach (var item in _array)
-            {
+            foreach (var item in _array) {
                 if (comparer.Equals(item, element))
                     return true;
             }
@@ -44,12 +31,10 @@ namespace GenericsLab.Problems7_8
             return false;
         }
 
-        public int CountGreaterThan(T element)
-        {
+        public int CountGreaterThan(T element) {
             var count = 0;
 
-            for (int i = 0; i < _length; i++)
-            {
+            for (int i = 0; i < _length; i++) {
                 if (_array[i].CompareTo(element) > 0)
                     count++;
             }
@@ -57,15 +42,13 @@ namespace GenericsLab.Problems7_8
             return count;
         }
 
-        public T Max()
-        {
+        public T Max() {
             if (_length == 0)
                 throw new ArgumentException("The collection is empty!");
 
             var max = _array[0];
 
-            for (int i = 0; i < _length; i++)
-            {
+            for (int i = 0; i < _length; i++) {
                 if (_array[i].CompareTo(max) > 0)
                     max = _array[i];
             }
@@ -73,15 +56,13 @@ namespace GenericsLab.Problems7_8
             return max;
         }
 
-        public T Min()
-        {
+        public T Min() {
             if (_length == 0)
                 throw new ArgumentException("The collection is empty!");
 
             var min = _array[0];
 
-            for (int i = 0; i < _length; i++)
-            {
+            for (int i = 0; i < _length; i++) {
                 if (_array[i].CompareTo(min) < 0)
                     min = _array[i];
             }
@@ -89,11 +70,10 @@ namespace GenericsLab.Problems7_8
             return min;
         }
 
-        public T Remove(int index)
-        {
+        public T Remove(int index) {
             if (index >= _length || index < 0 || _length == 0)
                 throw new ArgumentOutOfRangeException();
-            
+
 
             var element = _array[index];
             _array = _array.Take(index).Concat(_array.Skip(index + 1)).ToArray();
@@ -101,10 +81,8 @@ namespace GenericsLab.Problems7_8
             return element;
         }
 
-        public void Swap(int index1, int index2)
-        {
-            if (_length == 0 || index1 >= _length || index2 >= _length || index1 < 0 || index2 < 0)
-            {
+        public void Swap(int index1, int index2) {
+            if (_length == 0 || index1 >= _length || index2 >= _length || index1 < 0 || index2 < 0) {
                 return;
             }
 
@@ -113,8 +91,7 @@ namespace GenericsLab.Problems7_8
             _array[index2] = temp;
         }
 
-        public void Sort()
-        {
+        public void Sort() {
             _array = _array
                 .Take(_length)
                 .OrderBy(x => x)
@@ -122,8 +99,7 @@ namespace GenericsLab.Problems7_8
                 .ToArray();
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return string.Join(Environment.NewLine, _array.Take(_length));
         }
     }

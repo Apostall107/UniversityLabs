@@ -1,13 +1,7 @@
-﻿using Lab7.Problem2;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
-namespace Lab7.Problem6  {
-    internal class Pet  {
+namespace Lab7.Problem6 {
+    internal class Pet {
         public Pet() {
 
         }

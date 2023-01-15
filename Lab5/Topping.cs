@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab5 {
+﻿namespace Lab5 {
     internal class Topping {
         const double caloriesPerGram = 2;
 
@@ -31,7 +25,7 @@ namespace Lab5 {
             get { return _grams; }
             set {
                 if (value > 50 || value < 0) {
-                    Console.WriteLine($"{typeDict.Where(x => x.Value == ToppingType).First().Key } weight should be in the range [1..50]");
+                    Console.WriteLine($"{typeDict.Where(x => x.Value == ToppingType).First().Key} weight should be in the range [1..50]");
                 } else {
                     _grams = value;
                 }

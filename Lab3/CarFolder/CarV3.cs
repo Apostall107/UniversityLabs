@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab3.CarFolder.CarV3 {
+﻿namespace Lab3.CarFolder.CarV3 {
     internal class CarV3 {
         public string Model { get; set; }
         public Engine Engine { get; set; }
-        public int Weight { get; set; } 
-        public string Color { get; set; } 
+        public int Weight { get; set; }
+        public string Color { get; set; }
 
-        public CarV3(string model, Engine engine, int weight = 0 , string color = "n/a") {
+        public CarV3(string model, Engine engine, int weight = 0, string color = "n/a") {
             Model = model;
             Engine = engine;
             Weight = weight;
@@ -70,7 +61,7 @@ namespace Lab3.CarFolder.CarV3 {
 
         }
         public override string ToString() {
-            return 
+            return
                 $"{this.Model}:" +
                 $"\n\t {this.Engine.Model}" +
                 $"\n\t\tPower: {this.Engine.Power}" +
@@ -86,13 +77,13 @@ namespace Lab3.CarFolder.CarV3 {
     internal class Engine {
         public string Model { get; set; }
         public int Power { get; set; }
-        public int Displacement { get; set; } 
+        public int Displacement { get; set; }
         public string Efficiency { get; set; }
 
         public Engine() {
 
         }
-        public Engine(string model, int power, int displacement = 0, string efficiency = "n/a")  {
+        public Engine(string model, int power, int displacement = 0, string efficiency = "n/a") {
             Model = model;
             Power = power;
             Displacement = displacement;

@@ -1,34 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace Lab3 {
-        public class Employee {
-            public string Name { get; set; }
-            public decimal Salary { get; set; }
-            public string Position { get; set; }
-            public string Department { get; set; }
-            public string Email { get; set; }
-            public int Age { get; set; }
+    public class Employee {
+        public string Name { get; set; }
+        public decimal Salary { get; set; }
+        public string Position { get; set; }
+        public string Department { get; set; }
+        public string Email { get; set; }
+        public int Age { get; set; }
 
-            public Employee(string name, decimal salary, string position, string department, string email, int age) {
-                this.Name = name;
-                this.Salary = salary;
-                this.Position = position;
-                this.Department = department;
-                this.Email = email;
-                this.Age = age;
-            }
+        public Employee(string name, decimal salary, string position, string department, string email, int age) {
+            this.Name = name;
+            this.Salary = salary;
+            this.Position = position;
+            this.Department = department;
+            this.Email = email;
+            this.Age = age;
+        }
 
-        public static void  readAndSortEmployees() {
+        public static void readAndSortEmployees() {
             NumberFormatInfo provider = new NumberFormatInfo();
             provider.NumberDecimalSeparator = ".";
 
             int n = int.Parse(Console.ReadLine());
-            List<Employee> employees = new List<Employee>(); 
+            List<Employee> employees = new List<Employee>();
             for (int i = 0; i < n; i++) {
                 string[] tokens = Console.ReadLine().Split();
                 string name = tokens[0];
@@ -58,13 +53,13 @@ namespace Lab3 {
         }
 
 
-            public override string ToString() {
-                string output = $"{Name} {Salary:f2}";
-                output += Email != null ? $" {Email}" : " n/a";
-                output += Age != 0 ? $" {Age}" : " -1";
+        public override string ToString() {
+            string output = $"{Name} {Salary:f2}";
+            output += Email != null ? $" {Email}" : " n/a";
+            output += Age != 0 ? $" {Age}" : " -1";
 
-                return output;
-            }
+            return output;
         }
     }
+}
 

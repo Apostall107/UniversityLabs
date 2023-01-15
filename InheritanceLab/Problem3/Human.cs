@@ -1,27 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace InheritanceLab.Problem3
-{
-    internal class Human
-    {
+namespace InheritanceLab.Problem3 {
+    internal class Human {
         private string _firstName;
         private string _lastName;
 
-        public Human(string firstName, string lastName)
-        {
+        public Human(string firstName, string lastName) {
             FirstName = firstName;
             LastName = lastName;
         }
 
-        private string FirstName
-        {
+        private string FirstName {
             get => _firstName;
-            set
-            {
+            set {
                 if (char.IsLower(value[0]))
                     throw new ArgumentException("Expected upper case letter! Argument: firstName");
 
@@ -32,11 +23,9 @@ namespace InheritanceLab.Problem3
             }
         }
 
-        private string LastName
-        {
+        private string LastName {
             get => _lastName;
-            set
-            {
+            set {
                 if (char.IsLower(value[0]))
                     throw new ArgumentException("Expected upper case letter! Argument: lastName");
 
@@ -47,8 +36,7 @@ namespace InheritanceLab.Problem3
             }
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             var builder = new StringBuilder();
             builder.AppendLine($"First Name: {FirstName}")
                 .AppendLine($"Last Name: {LastName}");

@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GenericsLab.Problems7_8
-{
-    internal interface IMyCollection<T>
-    {
+﻿namespace GenericsLab.Problems7_8 {
+    internal interface IMyCollection<T> {
         void Add(T element);
         T Remove(int index);
         bool Contains(T element);

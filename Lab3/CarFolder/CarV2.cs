@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace Lab3.CarFolder {
     public class CarV2 {
@@ -60,11 +55,11 @@ namespace Lab3.CarFolder {
             } while (type != "fragile" && type != "flamable");
 
             List<CarV2> carsToShow;
-                if (type == "fragile") {
+            if (type == "fragile") {
                 carsToShow = cars.Where(x => x.Tires.Tire1Pressure < 1 || x.Tires.Tire2Pressure < 1 || x.Tires.Tire3Pressure < 1 || x.Tires.Tire4Pressure < 1).ToList();
-                } else {
+            } else {
                 carsToShow = cars.Where(x => x.Engine.EnginePower > 250).ToList();
-                }
+            }
 
             foreach (var item in carsToShow) {
                 Console.WriteLine(item.Model);
@@ -75,31 +70,31 @@ namespace Lab3.CarFolder {
 
 
 
-        }
-
-
     }
 
-    public class Engine {
-        public int EngineSpeed { get; set; }
-        public int EnginePower { get; set; }
-    }
 
-    public class Cargo {
-        public int CargoWeight { get; set; }
-        public string CargoType { get; set; }
-    }
+}
 
-    public class Tire {
-        public int Tire1Age { get; set; }
-        public int Tire2Age { get; set; }
-        public int Tire3Age { get; set; }
-        public int Tire4Age { get; set; }
-        public double Tire1Pressure { get; set; }
-        public double Tire2Pressure { get; set; }
-        public double Tire3Pressure { get; set; }
-        public double Tire4Pressure { get; set; }
+public class Engine {
+    public int EngineSpeed { get; set; }
+    public int EnginePower { get; set; }
+}
 
-    }
+public class Cargo {
+    public int CargoWeight { get; set; }
+    public string CargoType { get; set; }
+}
+
+public class Tire {
+    public int Tire1Age { get; set; }
+    public int Tire2Age { get; set; }
+    public int Tire3Age { get; set; }
+    public int Tire4Age { get; set; }
+    public double Tire1Pressure { get; set; }
+    public double Tire2Pressure { get; set; }
+    public double Tire3Pressure { get; set; }
+    public double Tire4Pressure { get; set; }
+
+}
 
 

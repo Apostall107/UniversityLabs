@@ -13,26 +13,20 @@ Console.WriteLine("Problem 4");
 ResolveProblem4();
 
 //=================Resolvers=================
-void ResolveProblem1()
-{
-    try
-    {
+void ResolveProblem1() {
+    try {
         string name = Console.ReadLine();
         int.TryParse(Console.ReadLine(), out int age);
 
         var child = new Child(name, age);
         Console.WriteLine(child);
-    }
-    catch (Exception ex)
-    {
+    } catch (Exception ex) {
         Console.WriteLine(ex.Message);
     }
 }
 
-void ResolveProblem2()
-{
-    try
-    {
+void ResolveProblem2() {
+    try {
         string author = Console.ReadLine();
         string title = Console.ReadLine();
         decimal price = decimal.Parse(Console.ReadLine());
@@ -40,17 +34,13 @@ void ResolveProblem2()
         GoldenEditionBook goldenEditionBook = new GoldenEditionBook(author, title, price);
         Console.WriteLine(book + Environment.NewLine);
         Console.WriteLine(goldenEditionBook);
-    }
-    catch (ArgumentException ae)
-    {
+    } catch (ArgumentException ae) {
         Console.WriteLine(ae.Message);
     }
 }
 
-void ResolveProblem3()
-{
-    try
-    {
+void ResolveProblem3() {
+    try {
         var studentInfo = Console.ReadLine().Split();
         var workerInfo = Console.ReadLine().Split();
         decimal.TryParse(workerInfo[2], out decimal weekSalary);
@@ -61,15 +51,12 @@ void ResolveProblem3()
 
         Console.WriteLine(oStudent);
         Console.WriteLine(oWorker);
-    }
-    catch (Exception ex)
-    {
+    } catch (Exception ex) {
         Console.WriteLine(ex.Message);
     }
 }
 
-void ResolveProblem4()
-{
+void ResolveProblem4() {
     var playList = SongHelper.ComposePlaylist();
     SongHelper.PrintPlaylistSummary(playList);
 }
