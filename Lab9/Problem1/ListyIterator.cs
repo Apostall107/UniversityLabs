@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace Lab9.Problem1 {
     internal class ListyIterator<T> : IEnumerable<T> {
@@ -42,7 +37,7 @@ namespace Lab9.Problem1 {
         }
 
         public IEnumerator<T> GetEnumerator() {
-             return new ListyIteratorEnumerator(this.data); 
+            return new ListyIteratorEnumerator(this.data);
         }
 
         IEnumerator IEnumerable.GetEnumerator() {

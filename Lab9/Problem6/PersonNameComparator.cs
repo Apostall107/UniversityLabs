@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab9.Problem6 {
+    internal class PersonNameComparator : IComparer<Person> {
+        public int Compare(Person x, Person y) {
+            var comparison = x.Name.Length - y.Name.Length;
+
+            return comparison == 0
+                ? (int)(char.ToLower(x.Name[0]) - char.ToLower(y.Name[0]))
+                : comparison;
+        }
+    }
+}
